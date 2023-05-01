@@ -1,0 +1,12 @@
+import:
+  - ~/.alacritty-colorscheme/themes/solarized_dark.yaml
+
+window:
+  opacity: 0.95
+
+shell:
+  program: /usr/bin/fish
+  args:
+    - -c
+    - tmux
+
