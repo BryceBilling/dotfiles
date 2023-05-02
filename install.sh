@@ -8,21 +8,18 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 	brew install nvm
 	mkdir ~/.nvm 
 	export NVM_DIR=~/.nvm
-	source $(brew --prefix nvm)/nvm.sh
-	
+	source $(brew --prefix nvm)/nvm.sh	
 fi
 
 if [[ $OSTYPE == 'linux-gnu'* ]]; then
 	echo 'arch/manjaro'
 	sudo pacman -S nvm
-	pacman -S ripgrep
+	sudo pacman -S ripgrep
 fi
 
 # install copilot
 git clone https://github.com/github/copilot.vim.git \
   ~/.config/nvim/pack/github/start/copilot.vim
-
-nvm install --lts
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}" ) && pwd)
 
