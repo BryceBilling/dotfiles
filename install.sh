@@ -2,6 +2,7 @@
 
 if [[ $OSTYPE == 'darwin'* ]]; then
 	echo 'macOS'
+	brew install ripgrep
 	brew uninstall --ignore-dependencies node
 	brew uninstall --force node
 	brew install nvm
@@ -14,7 +15,12 @@ fi
 if [[ $OSTYPE == 'linux-gnu'* ]]; then
 	echo 'arch/manjaro'
 	sudo pacman -S nvm
+	pacman -S ripgrep
 fi
+
+# install copilot
+git clone https://github.com/github/copilot.vim.git \
+  ~/.config/nvim/pack/github/start/copilot.vim
 
 nvm install --lts
 

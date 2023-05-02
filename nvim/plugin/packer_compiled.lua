@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -153,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["refactoring.nvim"] = {
+    loaded = true,
+    path = "/Users/bbilling/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
+    url = "https://github.com/theprimeagen/refactoring.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
