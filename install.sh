@@ -1,5 +1,23 @@
 #!/usr/bin/env bash
 
+if [[ $OSTYPE == 'darwin'* ]]; then
+	echo 'macOS'
+	brew uninstall --ignore-dependencies node
+	brew uninstall --force node
+	brew install nvm
+	mkdir ~/.nvm 
+	export NVM_DIR=~/.nvm
+	source $(brew --prefix nvm)/nvm.sh
+	
+fi
+
+if [[ $OSTYPE == 'linux-gnu'* ]]; then
+	echo 'arch/manjaro'
+	sudo pacman -S nvm
+fi
+
+nvm install --lts
+
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}" ) && pwd)
 
 # Create the backup directory if it doesn't exist
@@ -10,6 +28,7 @@ declare -a files_to_move=(
     "$HOME/.config/fish"
     "$HOME/.config/tmux"
     "$HOME/.config/nvim"
+    "$HOME/.config/alacritty"
 )
 
 # Loop through the array and move or copy the files
@@ -29,10 +48,13 @@ done
 
 # Create symlinks to the dotfiles
 rm -rf "$HOME/.config/fish"
-ln -s "$DOTFILES/kitty" "$HOME/.config/fish"
+ln -s "$DOTFILES/fish" "$HOME/.config/fish"
+
+rm -rf "$HOME/.config/alacritty"
+ln -s "$DOTFILES/alacritty" "$HOME/.config/alacritty"
 
 rm -rf "$HOME/.config/tmux"
 ln -s "$DOTFILES/tmux" "$HOME/.config/tmux"
 
 rm -rf "$HOME/.config/nvim"
-ln -s "$DOTFILES/nvim/user" "$HOME/.config/nvim"
+ln -s "$DOTFILES/nvim" "$HOME/.config/nvim"
