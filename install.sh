@@ -9,13 +9,19 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 	mkdir ~/.nvm 
 	export NVM_DIR=~/.nvm
 	source $(brew --prefix nvm)/nvm.sh	
+    brew install fd
 fi
 
 if [[ $OSTYPE == 'linux-gnu'* ]]; then
 	echo 'arch/manjaro'
 	sudo pacman -S nvm
 	sudo pacman -S ripgrep
+    sudo pacman -S fd
 fi
+
+#install packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # install copilot
 git clone https://github.com/github/copilot.vim.git \
