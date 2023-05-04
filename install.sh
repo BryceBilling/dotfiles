@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+mkdir ~/Projects
 if [[ $OSTYPE == 'darwin'* ]]; then
 	echo 'macOS'
 	brew install ripgrep

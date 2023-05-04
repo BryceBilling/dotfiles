@@ -22,13 +22,13 @@ return require('packer').startup(function(use)
     use 'theprimeagen/refactoring.nvim'
     -- use 'github/copilot.vim'
     use 'windwp/nvim-autopairs'
+    use 'nvim-tree/nvim-tree.lua'
     use {
         'goolord/alpha-nvim',
         config = function()
             require("bbilling.config.alpha")
         end
     }
-
     use 'nvim-lualine/lualine.nvim'
     use {
         'svrana/neosolarized.nvim',
@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
     }
     use 'norcalli/nvim-colorizer.lua'
     use 'lewis6991/gitsigns.nvim'
-    use {'akinsho/bufferline.nvim', tag = "*"}
+    use { 'akinsho/bufferline.nvim', tag = "*" }
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
