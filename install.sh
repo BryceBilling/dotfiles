@@ -4,13 +4,9 @@ mkdir ~/Projects
 if [[ $OSTYPE == 'darwin'* ]]; then
 	echo 'macOS'
 	brew install ripgrep
-	brew uninstall --ignore-dependencies node
-	brew uninstall --force node
+	brew install laszygit
+	brew install fd
 	brew install nvm
-	mkdir ~/.nvm 
-	export NVM_DIR=~/.nvm
-	source $(brew --prefix nvm)/nvm.sh	
-    brew install fd
 fi
 
 if [[ $OSTYPE == 'linux-gnu'* ]]; then
@@ -35,7 +31,7 @@ mkdir -p $HOME/.config/.dotfiles-backup
 
 # Define an array of file paths to move or copy
 declare -a files_to_move=(
-    "$HOME/.config/fish"
+    "$HOME/.config/iterm2"
     "$HOME/.config/tmux"
     "$HOME/.config/nvim"
     "$HOME/.config/alacritty"
@@ -57,8 +53,8 @@ for file_path in "${files_to_move[@]}"; do
 done
 
 # Create symlinks to the dotfiles
-rm -rf "$HOME/.config/fish"
-ln -s "$DOTFILES/fish" "$HOME/.config/fish"
+rm -rf "$HOME/.config/iterm2"
+ln -s "$DOTFILES/iterm2" "$HOME/.config/iterm2"
 
 rm -rf "$HOME/.config/alacritty"
 ln -s "$DOTFILES/alacritty" "$HOME/.config/alacritty"

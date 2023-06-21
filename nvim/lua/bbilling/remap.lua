@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.o.mouse = 'a'
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -21,7 +22,7 @@ vim.keymap.set('n', '-', '<C-x>')
 vim.keymap.set('n', 'db', 'vb"_d')
 
 -- Select all
-vim.keymap.set('n', '<leader>a', 'gg<S-v>G')
+vim.keymap.set('n', '<leader>a', 'ggVG', { noremap = true })
 
 -- Split window in vim
 vim.keymap.set('n', 'hs', ':split<Return><C-w>w')
@@ -51,16 +52,6 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
--- Search and Replace
-vim.keymap.set('n', '<leader>s', [[:s/]])
-vim.keymap.set('n', '<leader>sw', [[:s/\<\><Left><Left>]])
-vim.keymap.set('n', '<leader>sa', [[:%s/]])
-vim.keymap.set('n', '<leader>saw', [[:%s/\<\><Left><Left>]])
-vim.keymap.set("n", "<leader>sr", [[:%s///c<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>sra", [[:%s///g<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>sri", [[:%s/\<\>//I<Left><Left><Left><Left><Left>]])
-vim.keymap.set("n", "<leader>srw", [[:%s/\<\>//c<Left><Left><Left><Left><Left>]])
-
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/dotfiles/nvim/lua/bbilling/packer.lua<CR>");
 
 vim.keymap.set("n", "<leader>ds", function()
@@ -70,3 +61,24 @@ end)
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+vim.keymap.set({ "n", "v" }, "<leader>fe", function()
+    vim.cmd("NvimTreeToggle")
+end)
+
+-- Projects
+vim.keymap.set("n", "<leader>pp", function()
+    vim.cmd("Telescope projects")
+end)
+
+-- Searchbox
+vim.keymap.set('n', '<leader>S', ':SearchBoxIncSearch<CR>')
+vim.keymap.set('n', '<leader>s', ':SearchBoxMatchAll title="Match All"<CR>')
+vim.keymap.set('n', '<leader>ra', ':SearchBoxReplace<CR>')
+vim.keymap.set('n', '<leader>rs', ':SearchBoxReplace confirm=menu<CR>')
+
+-- Bufferline
+vim.keymap.set('n', 'tn', ':tabnew<CR>')
+vim.keymap.set('n', 'tq', ':bdelete<CR>')
+vim.keymap.set('n', 'tl', ':bnext<CR>')
+vim.keymap.set('n', 'th', ':bprevious<CR>')
